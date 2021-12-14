@@ -5,6 +5,8 @@ require 'starlark_compiler/writer'
 
 module StarlarkCompiler
   class BuildFile
+    attr_reader :path
+    attr_writer :path
     def initialize(package:, workspace: Dir.pwd)
       @loads = Hash.new { |h, k| h[k] = Set.new }
       @targets = {}
